@@ -23,7 +23,7 @@ docs <- Corpus (VectorSource(data[[2]]) ,  readerControl
                 = list(language="fa_FAE",encoding = "UTF-8"))
 
 ##### remove stop words #####
-persianStopwords_file_loc  = "/home/atieh/Desktop/topicmodeling/stopwords.txt"
+persianStopwords_file_loc  = "./files/stopwords.txt"
 persianStopwords<- readLines(persianStopwords_file_loc )
 
 docs <- tm_map(docs , removeWords , persianStopwords)
@@ -59,7 +59,7 @@ model.topics
 table(model.topics)
 
 ##### print top 5 important words in each topic #####
-print(terms(model , 30))
+print(terms(model , 5))
 
 
 ##### function to plot wordcloud for a given topic #####
@@ -78,4 +78,4 @@ plotWordCloud<- function(t){
 par(mfrow=c(1,2))
 
 plotWordCloud(1)
-plotWordCloud(10)
+plotWordCloud(8)
