@@ -49,6 +49,7 @@ k = 10
 
 ##### train topic models #####
 model <- LDA(dtm , k=k , method = "Gibbs" , control = list(burnin = burnin , iter = iter , keep = keep))
+#model <- LDA(dtm , k=k )
 
 
 ##### topics assigned to each document #####
@@ -77,5 +78,5 @@ plotWordCloud<- function(t){
 ##### plot wordcloud of two topics and compare them! #####
 par(mfrow=c(1,2))
 
-plotWordCloud(1)
-plotWordCloud(8)
+plotWordCloud(5)
+plotWordCloud(10)
